@@ -1,0 +1,24 @@
+databaseConnection:
+    host: "jira-software-db"
+    user: "jirauser"
+    database: "jiradb"
+    password: "s0crat3s"
+databaseDrop: 
+    enabled: true    
+global:
+    storageClass: "rook-cephfs"
+image:
+    tag: "7.13.8"        
+persistence:
+    storageClass: "rook-cephfs"
+postgresqlDatabase: "jiradb"    
+postgresqlPassword: "postgres"
+postgresql:  
+    image:
+        tag: "9.6"
+    securityContext:
+        enabled: true
+        fsGroup: 70
+        runAsUser: 70    
+service:
+    type: "NodePort"
